@@ -22,7 +22,11 @@ app.get('/api/get-data', dataController.getData);
 
 app.post('/api/post-data', dataController.postData);
 
+app.post('/api/get-data/find', dataController.findData);
 
-app.listen(9000, function(){
+
+
+
+app.listen(process.env.PORT || 9000, function () {
 	console.log('server is up');
 })

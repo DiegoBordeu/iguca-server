@@ -19,5 +19,20 @@ module.exports.postData = function (req, res) {
         }
 
         res.status(200).send("guardaste a una persona"); 
+        
     })
 }
+
+
+module.exports.findData = function (req, res) {
+    Person.find({ firstName: req.body.firstName, lastName: req.body.lastName }, function (err, people) {
+        if (err) {
+            return res.status(500).send("no se pudo correr");
+        }
+
+        res.json({ data: people });
+        console.log("se encontro");
+    })
+}
+
+
