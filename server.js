@@ -22,7 +22,11 @@ app.get('/api/get-data', dataController.getData);
 
 app.post('/api/post-data', dataController.postData);
 
-app.post('/api/get-data/find', dataController.findData);
+app.post('/api/post-data/find', dataController.findData);
+
+app.post('/api/post-data/delete', dataController.deleteData);
+
+
 
 
 

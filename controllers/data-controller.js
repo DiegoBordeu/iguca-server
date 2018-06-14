@@ -35,4 +35,25 @@ module.exports.findData = function (req, res) {
     })
 }
 
+module.exports.deleteData = function (req, res) {
+    Person.findOneAndDelete({ firstName: req.body.firstName, lastName: req.body.lastName }, function (err, people) {
+        if (err) {
+            return res.status(500).send("no se pudo correr");
+        }
+
+        res.json({ data: people });
+       // if (res.json = "{}") {
+       //     console.log("se elimino " + req.body.firstName + ", " + req.body.lastName);
+       //     console.log(res.json);
+       // }
+    })
+} 
+
+
+
+
+
+
+
+
 
